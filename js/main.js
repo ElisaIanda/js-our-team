@@ -18,51 +18,56 @@
 // Organizzare i singoli membri in card/schede
 
 
-
-const team = document.getElementById("team");
-const cardName = document.getElementById("card name");
-const cardJob = document.getElementById("card-position");
-const imgContainer = document.getElementById('image-container');
+// const imgContainer = document.getElementById('image-container');
 
 // Creao Array di oggetti 
 const teamList = [
     {
         nome: " Wayne Barnett",
         rule: " Founder & CEO",
-        photo: 'img/wayne-barnett-founder-ceo.jpg',
+        photo: "wayne-barnett-founder-ceo.jpg",
     },
     {
         nome: " Angela Caroll",
         rule: " Chief Editor",
-        photo: " angela-caroll-chief-editor.jpg"
+        photo: "angela-caroll-chief-editor.jpg"
     },
     {
         nome: " Walter Gordon",
         rule: " Office Manager",
-        photo: " walter-gordon-office-manager.jpg"
+        photo: "walter-gordon-office-manager.jpg"
     },
     {
         nome: " Angela Lopez",
         rule: " Social Media Manager",
-        photo: " angela-lopez-social-media-manager.jpg"
+        photo: "angela-lopez-social-media-manager.jpg"
     },
     {
         nome: " Scott Estrada",
         rule: " Developer",
-        photo: " scott-estrada-developer.jpg"
+        photo: "scott-estrada-developer.jpg"
     },
     {
         nome: " Barbara Ramos",
         rule: " Graphic Designer",
-        photo: " barbara-ramos-graphic-designer.jpg"
+        photo: "barbara-ramos-graphic-designer.jpg"
     },
 ];
 
 // console.log(teamList);
 for (let i = 0; i < teamList.length; i++) {
     const singolPersonteam = teamList[i];
-    team.innerHTML += `<div class="card-body"><div class="card-title text-center">${singolPersonteam.nome}</div></div>`;
-    team.innerHTML += `<div class="card-text text-center">${singolPersonteam.rule} <img src="/img/${singolPersonteam.photo}"</div>`;
+
+    document.querySelector(".row").innerHTML +=
+        `<div class="col-xl-4 col-md-6 col-sm-12 d-flex justify-content-center p-3">
+            <div class="card w-100" style="width: 18rem;">
+                <img src="img/${singolPersonteam.photo}" class="card-img-top" alt="Img">
+                <div class="card-body text-center">
+                    <strong class="card-text">${singolPersonteam.nome}</strong>
+                    <div class="card-text">${singolPersonteam.rule}</div>
+                </div>
+            </div>
+        </div>`
 }
 
 // const images = [
@@ -80,8 +85,6 @@ for (let i = 0; i < teamList.length; i++) {
 //     const img = document.createElement('img');
 //     img.src = images[i];
 //     imgContainer.appendChild(img);
-//     const newImg = imgContainer.appendChild(img);
-//     team.innerHTML += `${newImg}`;
 // }
 
 
