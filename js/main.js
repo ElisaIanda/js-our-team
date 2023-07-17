@@ -20,6 +20,8 @@
 
 // const imgContainer = document.getElementById('image-container');
 
+
+
 // Creao Array di oggetti 
 const teamList = [
     {
@@ -62,13 +64,51 @@ for (let i = 0; i < teamList.length; i++) {
         `<div class="col-xl-4 col-md-6 col-sm-12 d-flex justify-content-center p-3">
             <div class="card w-100" style="width: 18rem;">
                 <img src="img/${singolPersonteam.photo}" class="card-img-top" alt="Img">
+                <div class="card-header text-center">
+                    <div class="card-text"><b>${singolPersonteam.nome}</b></div>
+                </div>
                 <div class="card-body text-center">
-                    <strong class="card-text">${singolPersonteam.nome}</strong>
                     <div class="card-text">${singolPersonteam.rule}</div>
                 </div>
             </div>
         </div>`
 }
+
+
+
+const fullNameinput = document.getElementById("full-name");
+
+const ruleInput = document.getElementById("rule");
+
+const btnInput = document.getElementById("btn");
+
+
+
+btnInput.addEventListener("click", function () {
+
+    const newMemberteam = {
+        nome: fullNameinput.value,
+        rule: ruleInput.value,
+        photo: "https://picsum.photos/200/300",
+    };
+
+    teamList.push(newMemberteam);
+
+    document.querySelector(".row").innerHTML +=
+    `<div class="col-xl-4 col-md-6 col-sm-12 d-flex justify-content-center p-3">
+        <div class="card w-100" style="width: 18rem;">
+            <img src="${newMemberteam.photo}" class="card-img-top" alt="Img">
+            <div class="card-header text-center">
+                <div class="card-text"><b>${newMemberteam.nome}</b></div>
+            </div>
+            <div class="card-body text-center">
+                <div class="card-text">${newMemberteam.rule}</div>
+            </div>
+        </div>
+    </div>`
+});
+
+
 
 // const images = [
 
